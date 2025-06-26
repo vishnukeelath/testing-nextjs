@@ -1,33 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { cachedGetTxt } from "./_actions/actions";
+import { cachedGetTxt } from "../_actions/actions";
 import Link from "next/link";
-import { fetchClient } from "@/lib/FetchClient";
+import { Nested2 } from "../_components/nested2";
+import { Nested1 } from "../_components/nested1";
 
 export default async function Home() {
   const txtdata = await cachedGetTxt();
-  console.log("home filedata", txtdata);
-
-  const blogData = await fetchClient.fetch(
-    "Pages/get/slug/top-wedding-photography-trends-for-2025"
-  );
-  console.log("blogData", blogData);
+  console.log("home filedata 5", txtdata);
   return (
     <div className={styles.page}>
+      <Nested1></Nested1>
       <main className={styles.main}>
         <Link
-          href={"/contact"}
+          href={"/"}
           className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600`}
           // aria-label={label}
         >
-          Contact
-        </Link>
-        <Link
-          href={"/blogs"}
-          className={`px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600`}
-          // aria-label={label}
-        >
-          Blogs
+          button
         </Link>
         <Image
           className={styles.logo}
