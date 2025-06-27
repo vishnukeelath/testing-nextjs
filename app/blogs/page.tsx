@@ -1,4 +1,4 @@
-import React, { cache } from "react";
+// import React, { cache } from "react";
 import Link from "next/link";
 // import { generateMetadata } from "@/lib/Seo";
 import { fetchClient } from "@/lib/FetchClient";
@@ -10,7 +10,7 @@ interface ProductData {
   [key: string]: any;
 }
 
-export const fetchProductData = cache(async (): Promise<ProductData | null> => {
+export const fetchProductData = async (): Promise<ProductData | null> => {
   try {
     console.log("fetchProductData call run");
 
@@ -25,7 +25,7 @@ export const fetchProductData = cache(async (): Promise<ProductData | null> => {
     console.error("Product API error:", error);
     return null;
   }
-});
+};
 export async function generateMetadata(): Promise<Metadata> {
   const pageApidata = await fetchProductData();
   return generateCommonMetadata({ seoDataFromApi: pageApidata });
