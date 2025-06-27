@@ -2,6 +2,7 @@ import { fetchClient } from "@/lib/FetchClient";
 import { cache } from "react";
 
 interface Homefile {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 

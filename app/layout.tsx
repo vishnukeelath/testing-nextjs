@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { headers } from "next/headers";
 import { fetchClient } from "@/lib/FetchClient";
+import { generateCommonMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,6 +77,10 @@ const geistMono = Geist_Mono({
 //   };
 // }
 
+export async function generateMetadata(): Promise<Metadata> {
+  return generateCommonMetadata();
+}
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -88,10 +92,10 @@ export default async function RootLayout({
   console.log("blogData", blogData);
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <title>{blogData?.data?.metatitle || "EventoQ2"}</title>
         <meta name="description" content={blogData?.data?.description} />
-      </head>
+      </head> */}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

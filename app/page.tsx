@@ -3,12 +3,10 @@ import styles from "./page.module.css";
 import { cachedGetTxt } from "./_actions/actions";
 import Link from "next/link";
 import { fetchClient } from "@/lib/FetchClient";
-import { Metadata } from "next";
-import { generateCommonMetadata } from "@/lib/metadata";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return generateCommonMetadata(null);
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   return generateCommonMetadata();
+// }
 
 export default async function Home() {
   const txtdata = await cachedGetTxt();

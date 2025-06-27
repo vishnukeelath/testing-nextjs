@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { cachedGetTxt } from "../_actions/actions";
 import Link from "next/link";
-import { Nested2 } from "../_components/nested2";
 import { Nested1 } from "../_components/nested1";
 
 export default async function Home() {

@@ -5,9 +5,8 @@ import { fetchClient } from "@/lib/FetchClient";
 import { Metadata } from "next";
 import { generateCommonMetadata } from "@/lib/metadata";
 
-type Props = {};
-
 interface ProductData {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
@@ -27,10 +26,10 @@ async function fetchProductData(): Promise<ProductData | null> {
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageApidata = await fetchProductData();
-  return generateCommonMetadata(pageApidata);
+  return generateCommonMetadata({ seoDataFromApi: pageApidata });
 }
 
-const pages = async (props: Props) => {
+const pages = async () => {
   const blogData = await fetchClient.fetch(
     "Pages/get/slug/top-wedding-photography-trends-for-2025"
   );
