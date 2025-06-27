@@ -10,7 +10,7 @@ interface ProductData {
   [key: string]: any;
 }
 
-export const fetchProductData = async (): Promise<ProductData | null> => {
+const fetchProductData = async (): Promise<ProductData | null> => {
   try {
     console.log("fetchProductData call run");
 
@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const pages = async () => {
-  // const blogData = await fetchProductData();
-  // console.log("blogData", blogData);
+  const blogData = await fetchProductData();
+  console.log("blogData", blogData);
   return (
     <div>
       <Link
