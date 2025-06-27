@@ -41,7 +41,7 @@ export default async function Home() {
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <title>EventoQ</title>
+        {/* <title>EventoQ</title> */}
       </head>
       <main className={styles.main}>
         <Link
