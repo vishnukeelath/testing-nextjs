@@ -72,8 +72,8 @@ export async function generateCommonMetadata({
 
     return {
       //   ...defaultMetadata,
-      title: seoDataFromApi?.data?.name,
-      description: seoDataFromApi?.data?.description,
+      title: seoDataFromApi?.data?.metatitle,
+      description: seoDataFromApi?.data?.metadescription,
       keywords: seoDataFromApi?.data?.tags,
       openGraph: {
         title: seoDataFromApi?.data?.name,
@@ -87,6 +87,11 @@ export async function generateCommonMetadata({
       //   ...defaultMetadata,
       title: "Eventoq 007",
       description: "The top event planning location",
+      openGraph: {
+        title: "Eventoq 007",
+        description: "The top event planning location",
+        images: seoDataFromApi?.data?.image,
+      },
       // title: "Error",
       // description: "Failed to load page metadata",
     };
