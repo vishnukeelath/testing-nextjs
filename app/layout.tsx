@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { fetchClient } from "@/lib/FetchClient";
-import { generateCommonMetadata } from "@/lib/metadata";
+// import { generateCommonMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,9 +77,9 @@ const geistMono = Geist_Mono({
 //   };
 // }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return generateCommonMetadata();
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   return generateCommonMetadata();
+// }
 
 export default async function RootLayout({
   children,

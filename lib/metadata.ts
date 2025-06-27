@@ -64,9 +64,9 @@ export async function generateCommonMetadata({
       console.log("111 seoData", seoDataFromUrl);
       return {
         ...seoDataFromUrl,
-        title: seoDataFromUrl?.metatitle || "Not Found",
+        title: seoDataFromUrl?.metatitle || "Eventoq 00",
         description:
-          seoDataFromUrl?.metadescription || "No data found for this page",
+          seoDataFromUrl?.metadescription || "The top event planning location",
       };
     }
 
@@ -85,8 +85,10 @@ export async function generateCommonMetadata({
     console.error("Error fetching page metadata:", error);
     return {
       //   ...defaultMetadata,
-      title: "Error",
-      description: "Failed to load page metadata",
+      title: "Eventoq 007",
+      description: "The top event planning location",
+      // title: "Error",
+      // description: "Failed to load page metadata",
     };
   }
 }
