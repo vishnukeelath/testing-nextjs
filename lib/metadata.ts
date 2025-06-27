@@ -21,7 +21,7 @@ type SeoData = {
 };
 
 const defaultMetadata: Metadata = {
-  themeColor: "#000000",
+  // themeColor: "#000000",
   icons: {
     icon: [
       {
