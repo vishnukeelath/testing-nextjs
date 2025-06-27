@@ -32,8 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const pages = async () => {
-  const blogData = await fetchProductData();
-  console.log("blogData", blogData);
+  // const blogData = await fetchProductData();
+  // console.log("blogData", blogData);
   return (
     <div>
       <Link
