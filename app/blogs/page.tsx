@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cache } from "react";
 import Link from "next/link";
 // import { generateMetadata } from "@/lib/Seo";
 import { fetchClient } from "@/lib/FetchClient";
@@ -10,29 +10,29 @@ interface ProductData {
   [key: string]: any;
 }
 
-async function fetchProductData(): Promise<ProductData | null> {
+export const fetchProductData = cache(async (): Promise<ProductData | null> => {
   try {
     console.log("fetchProductData call run");
-    const response = await fetchClient.fetch(
+
+    const response = await fetchClient.fetch<ProductData>(
       "Pages/get/slug/top-wedding-photography-trends-for-2025"
     );
+
     console.log("fetchProductData call response", response);
-    return response as ProductData;
+
+    return response;
   } catch (error) {
     console.error("Product API error:", error);
     return null;
   }
-}
-
+});
 export async function generateMetadata(): Promise<Metadata> {
   const pageApidata = await fetchProductData();
   return generateCommonMetadata({ seoDataFromApi: pageApidata });
 }
 
 const pages = async () => {
-  const blogData = await fetchClient.fetch(
-    "Pages/get/slug/top-wedding-photography-trends-for-2025"
-  );
+  const blogData = await fetchProductData();
   console.log("blogData", blogData);
   return (
     <div>

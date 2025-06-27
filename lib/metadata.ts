@@ -20,6 +20,26 @@ type SeoData = {
   [key: string]: any;
 };
 
+const defaultMetadata: Metadata = {
+  themeColor: "#000000",
+  icons: {
+    icon: [
+      {
+        url: "/favicons/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicons/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: "/favicons/apple-touch-icon.png",
+  },
+  manifest: "/favicons/site.webmanifest",
+};
+
 // Simulate fetching SEO data based on URL
 async function fetchSeoData(url: string): Promise<SeoData> {
   // Replace with your actual API endpoint
@@ -67,6 +87,7 @@ export async function generateCommonMetadata({
         title: seoDataFromUrl?.metatitle || "Eventoq 00",
         description:
           seoDataFromUrl?.metadescription || "The top event planning location",
+        ...defaultMetadata,
       };
     }
 
@@ -92,6 +113,7 @@ export async function generateCommonMetadata({
         description: "The top event planning location",
         images: seoDataFromApi?.data?.image,
       },
+      ...defaultMetadata,
       // title: "Error",
       // description: "Failed to load page metadata",
     };
