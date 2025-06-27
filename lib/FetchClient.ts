@@ -11,6 +11,7 @@ class FetchClient {
     options: FetchOptions = {}
   ): Promise<T> {
     const { method = "GET", body, headers = {} } = options;
+    console.log("fetchclient fetch function called");
 
     const defaultHeaders = {
       "Content-Type": "application/json",
