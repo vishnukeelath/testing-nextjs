@@ -76,8 +76,8 @@ export async function generateCommonMetadata({
       description: seoDataFromApi?.data?.metadescription,
       keywords: seoDataFromApi?.data?.tags,
       openGraph: {
-        title: seoDataFromApi?.data?.name,
-        description: seoDataFromApi?.data?.description,
+        title: seoDataFromApi?.data?.metatitle,
+        description: seoDataFromApi?.data?.metadescription,
         images: seoDataFromApi?.data?.image,
       },
     };
